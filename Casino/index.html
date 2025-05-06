@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Casino Slot Machine</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <div class="container">
+            <h1>Casino Slot Machine</h1>
+            
+            <div class="balance-container">
+                <h2>Balance: <span id="balance">1000</span></h2>
+                <button id="add-funds">Add Funds</button>
+            </div>
+            
+            <div class="slot-machine">
+                <div class="reels">
+                    <div class="reel" id="reel1">
+                        <div class="symbol">🍒</div>
+                    </div>
+                    <div class="reel" id="reel2">
+                        <div class="symbol">🍋</div>
+                    </div>
+                    <div class="reel" id="reel3">
+                        <div class="symbol">🍉</div>
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <div class="bet-container">
+                        <label for="bet-amount">Bet Amount:</label>
+                        <input type="number" id="bet-amount" min="10" value="50" step="10">
+                    </div>
+                    <button id="spin-button">SPIN</button>
+                </div>
+            </div>
+            
+            <div id="message"></div>
+            
+            <!-- Mini-game container -->
+            <div id="mini-game-container" class="hidden">
+                <h3>Complete the Mini-Game to Win 100 Credits!</h3>
+                <div id="mini-game">
+                    <div id="target"></div>
+                    <button id="mini-game-button">Click Me!</button>
+                </div>
+                <div id="mini-game-timer">Time: <span id="timer-value">10</span>s</div>
+                <div id="mini-game-message"></div>
+                <button id="mini-game-close" class="hidden">Close</button>
+            </div>
+        </div>
+        
+        <div class="profile-panel">
+            <div class="profile-header">
+                <h2>Player Profile</h2>
+                <button id="toggle-profile" class="toggle-button">▼</button>
+            </div>
+            
+            <div id="profile-content" class="profile-content">
+                <div class="profile-avatar">
+                    <img id="profile-image" src="https://via.placeholder.com/150" alt="Profile Avatar">
+                </div>
+                
+                <div id="profile-display" class="profile-display hidden">
+                    <div class="profile-info">
+                        <p><strong>Username:</strong> <span id="display-username"></span></p>
+                        <p><strong>Email:</strong> <span id="display-email"></span></p>
+                        <p><strong>Age:</strong> <span id="display-age"></span></p>
+                        <p><strong>Favorite Game:</strong> <span id="display-favorite-game"></span></p>
+                        <p><strong>Bio:</strong> <span id="display-bio"></span></p>
+                    </div>
+                    <button id="edit-profile" class="edit-button">Edit Profile</button>
+                </div>
+                
+                <form id="profile-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" placeholder="Enter your username">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" placeholder="Enter your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="age">Age:</label>
+                        <input type="number" id="age" name="age" min="18" max="99" placeholder="Enter your age">
+                    </div>
+                    <div class="form-group">
+                        <label for="favorite-game">Favorite Game:</label>
+                        <select id="favorite-game" name="favorite-game">
+                            <option value="">Select a game</option>
+                            <option value="slots">Slots</option>
+                            <option value="poker">Poker</option>
+                            <option value="blackjack">Blackjack</option>
+                            <option value="roulette">Roulette</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Bio:</label>
+                        <textarea id="bio" name="bio" placeholder="Tell us about yourself"></textarea>
+                    </div>
+                    <button type="button" id="save-profile">Save Profile</button>
+                </form>
+                <div id="profile-saved-message" class="hidden">Profile saved successfully!</div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html> 
